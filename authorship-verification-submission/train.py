@@ -18,7 +18,12 @@ if __name__ == "__main__":
         "nlpbuw-fsu-sose-24", "authorship-verification-train-20240408-training"
     )
     df = text.join(labels.set_index("id"))
-    
+
+    # print the first 5 rows
+    print(df.head())
+
+    # export the data to a json file with indent=4
+    df.to_json(Path(__file__).parent / "data.json", indent=4)
 
     # Train the model
     model = Pipeline(

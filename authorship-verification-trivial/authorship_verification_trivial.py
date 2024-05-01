@@ -23,6 +23,8 @@ if __name__ == "__main__":
     )
 
     # classifying the data
+    # this is a trivial classifier that classifies all texts that contain the word "delve" as written by the same author
+    # we do not use the training data here, as the classifier is trivial
     prediction = (
         text_validation.set_index("id")["text"]
         .str.contains("delve", case=False)
