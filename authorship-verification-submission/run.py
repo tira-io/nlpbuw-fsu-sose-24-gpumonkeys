@@ -13,9 +13,7 @@ if __name__ == "__main__":
         "nlpbuw-fsu-sose-24", f"authorship-verification-validation-20240408-training"
     )
 
-    labels = tira.pd.truths(
-        "nlpbuw-fsu-sose-24", f"authorship-verification-validation-20240408-training"
-    )
+
 
     # Load the model and make predictions
     model = load(Path(__file__).parent / "model.joblib")
@@ -23,10 +21,6 @@ if __name__ == "__main__":
     df["generated"] = predictions
     df = df[["id", "generated"]]
 
-    # export truth to a json file with indent=4
-    labels.to_json(
-        Path(__file__).parent / "truth.json", orient="records", lines=True, indent=4
-    )
 
     # Save the predictions
     output_directory = get_output_directory(str(Path(__file__).parent))
@@ -34,6 +28,12 @@ if __name__ == "__main__":
         Path(output_directory) / "predictions.jsonl", orient="records", lines=True
     )
 
+    """
+    labels = tira.pd.truths(
+        "nlpbuw-fsu-sose-24", f"authorship-verification-validation-20240408-training"
+    )
+
     # Calculate the F1 score
     f1 = f1_score(labels["generated"], predictions)
     print(f"F1 score: {f1}")
+    """
