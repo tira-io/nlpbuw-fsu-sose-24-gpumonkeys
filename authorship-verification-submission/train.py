@@ -25,7 +25,10 @@ if __name__ == "__main__":
     df = text.join(labels.set_index("id"))
 
     # print the first 5 rows
-    #print(df.head())
+    print(df.head())
+    #print the number of rows
+    print(len(df.index))
+    
 
     # export the data to a json file with indent=4
     #df.to_json(Path(__file__).parent / "data.json", indent=4)
