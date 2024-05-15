@@ -10,7 +10,7 @@ if __name__ == "__main__":
     # Load the data
     tira = Client()
     df = tira.pd.inputs(
-        "nlpbuw-fsu-sose-24", f"language-identification-train-20240429-training"
+        "nlpbuw-fsu-sose-24", f"language-identification-validation-20240429-training"
     )
 
 
@@ -29,10 +29,10 @@ if __name__ == "__main__":
     )
 
 
-    labels = tira.pd.truths(
-        "nlpbuw-fsu-sose-24", f"language-identification-train-20240429-training"
-    )
+    # labels = tira.pd.truths(
+    #    "nlpbuw-fsu-sose-24", f"language-identification-validation-20240429-training"
+    # )
 
     # Calculate the F1 score
-    f1_score = f1_score(labels["lang"], predictions, average="weighted")
-    print(f"F1 score: {f1_score}")
+    # f1_score = f1_score(labels["lang"], predictions, average="weighted")
+    # print(f"F1 score: {f1_score}")
