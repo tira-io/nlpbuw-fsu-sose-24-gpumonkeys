@@ -16,11 +16,11 @@ if __name__ == "__main__":
     # Load the data
     tira = Client()
     text = tira.pd.inputs(
-        "nlpbuw-fsu-sose-24", "language-identification-validation-20240429-training"
+        "nlpbuw-fsu-sose-24", "language-identification-train-20240429-training"
     )
     text = text.set_index("id")
     labels = tira.pd.truths(
-        "nlpbuw-fsu-sose-24", "language-identification-validation-20240429-training"
+        "nlpbuw-fsu-sose-24", "language-identification-train-20240429-training"
     )
     df = text.join(labels.set_index("id"))
 
