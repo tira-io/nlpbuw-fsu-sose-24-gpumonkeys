@@ -1,2 +1,4 @@
 predictions.jsonl
 *.json
+summarization-ludwig/comparison.jsonl
+summarization-ludwig/targets_validation.jsonl
