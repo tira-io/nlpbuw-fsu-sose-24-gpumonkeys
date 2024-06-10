@@ -71,9 +71,6 @@ if __name__ == "__main__":
         "nlpbuw-fsu-sose-24", "summarization-validation-20240530-training"
     ).set_index("id")
 
-    labels = tira.pd.truths(
-        "nlpbuw-fsu-sose-24", "summarization-validation-20240530-training"
-    ).set_index("id")
     
     df['summary'] = df['story'].apply(lambda x: textrank_summarize(x, num_sentences=3))
     
