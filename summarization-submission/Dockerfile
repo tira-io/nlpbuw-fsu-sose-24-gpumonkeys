@@ -8,4 +8,4 @@ ADD run.py /code/run.py
 RUN pip install -r /code/requirements.txt
 
 # Define the entry point for the container
-CMD ["python3", "/code/run.py"]
+ENTRYPOINT ["python3", "/code/run.py"]
