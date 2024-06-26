@@ -29,12 +29,3 @@ if __name__ == "__main__":
     predictions.to_json(
         Path(output_directory) / "predictions.jsonl", orient="records", lines=True
     )
-
-    # evaluating the prediction
-    from seqeval.metrics import f1_score
-
-    y_true = [x['tags'] for x in targets_validation.to_dict(orient='records')]
-    y_pred = [x['tags'] for x in predictions.to_dict(orient='records')]
-
-    print(f1_score(y_true, y_pred))
-
